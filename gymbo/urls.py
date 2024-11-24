@@ -6,3 +6,4 @@ urlpatterns = [
     path('', include('core.urls')),  # Reemplaza 'core' con el nombre de tu aplicación
 ]
 
+

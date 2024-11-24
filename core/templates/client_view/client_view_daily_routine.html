@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client - Gymbo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-blue-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white text-2xl font-bold">Gymbo</h1>
+            <button class="relative group">
+                <span class="text-white">Logout</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <aside class="w-64 bg-white shadow-md min-h-screen">
+            <div class="p-6">
+                <nav class="space-y-4">
+                    <a href="client_view_daily_routine.html" class="block text-gray-700 font-medium hover:text-blue-500">Tu día</a>
+                    <a href="client_view_weekly_routines.html" class="block text-gray-700 font-medium hover:text-blue-500">Rutina de la semana</a>
+                    <a href="client_view_statistics.html" class="block text-gray-700 font-medium hover:text-blue-500">Estadísticas</a>
+                    <a href="client_view_week_settings.html" class="block text-gray-700 font-medium hover:text-blue-500">Ajustes de rutina</a>
+                    <a href="client_view_account_settings.html" class="block text-gray-700 font-medium hover:text-blue-500">Ajustes de cuenta</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-6">
+            <h1 class="text-3xl font-bold mb-4">Bienvenido, cliente</h1>
+            <p class="text-lg mb-6">Esta es la rutina de hoy que el entrenador ENTRENADOR dejó para ti:</p>
+            <div class="overflow-x-auto">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white shadow-md rounded">
+                        <thead>
+                            <tr class="bg-blue-500 text-white">
+                                <th class="py-2 px-4">Ejercicio</th>
+                                <th class="py-2 px-4">Series de Calentamiento</th>
+                                <th class="py-2 px-4">Series</th>
+                                <th class="py-2 px-4">Repeticiones</th>
+                                <th class="py-2 px-4">%1RM</th>
+                                <th class="py-2 px-4">Descanso</th>
+                                <th class="py-2 px-4">RPE</th>
+                                <th class="py-2 px-4">Notas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Peso Muerto</td>
+                                <td class="py-2 px-4">3</td>
+                                <td class="py-2 px-4">2</td>
+                                <td class="py-2 px-4">5</td>
+                                <td class="py-2 px-4">85%</td>
+                                <td class="py-2 px-4">3-5 min</td>
+                                <td class="py-2 px-4">N/A</td>
+                                <td class="py-2 px-4">Contrae tus lats, pecho alto, caderas altas, tira el holgado de la barra antes de levantarla del suelo</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Sentadilla</td>
+                                <td class="py-2 px-4">3</td>
+                                <td class="py-2 px-4">3</td>
+                                <td class="py-2 px-4">8</td>
+                                <td class="py-2 px-4">75%</td>
+                                <td class="py-2 px-4">3-4 min</td>
+                                <td class="py-2 px-4">N/A</td>
+                                <td class="py-2 px-4">Siéntate y baja, 15° de apertura de pies, conduce tus rodillas hacia afuera lateralmente</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Paso con Mancuerna</td>
+                                <td class="py-2 px-4">2</td>
+                                <td class="py-2 px-4">3</td>
+                                <td class="py-2 px-4">12</td>
+                                <td class="py-2 px-4">N/A</td>
+                                <td class="py-2 px-4">0 min</td>
+                                <td class="py-2 px-4">9</td>
+                                <td class="py-2 px-4">Ajusta la caja a paralelo</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Hiperextensión Inversa</td>
+                                <td class="py-2 px-4">0</td>
+                                <td class="py-2 px-4">2</td>
+                                <td class="py-2 px-4">15</td>
+                                <td class="py-2 px-4">N/A</td>
+                                <td class="py-2 px-4">1-2 min</td>
+                                <td class="py-2 px-4">8</td>
+                                <td class="py-2 px-4">Concentra en apretar tus glúteos</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Extensión de Pierna Unilateral</td>
+                                <td class="py-2 px-4">0</td>
+                                <td class="py-2 px-4">2</td>
+                                <td class="py-2 px-4">12</td>
+                                <td class="py-2 px-4">N/A</td>
+                                <td class="py-2 px-4">1-2 min</td>
+                                <td class="py-2 px-4">8</td>
+                                <td class="py-2 px-4">12 repeticiones cada pierna</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Abducción de Cadera de Pie con Cable</td>
+                                <td class="py-2 px-4">1</td>
+                                <td class="py-2 px-4">3</td>
+                                <td class="py-2 px-4">10</td>
+                                <td class="py-2 px-4">N/A</td>
+                                <td class="py-2 px-4">1-2 min</td>
+                                <td class="py-2 px-4">8</td>
+                                <td class="py-2 px-4">Aprieta tus glúteos</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Punto Débil de la Parte Inferior del Cuerpo 1</td>
+                                <td class="py-2 px-4">0</td>
+                                <td class="py-2 px-4">3</td>
+                                <td class="py-2 px-4">15-20</td>
+                                <td class="py-2 px-4">N/A</td>
+                                <td class="py-2 px-4">1-2 min</td>
+                                <td class="py-2 px-4">9</td>
+                                <td class="py-2 px-4">Concentra en la conexión mente-músculo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+            <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Modificar Rutina</button>
+        </main>
+        
+    </div>
+</body>
+
+</html>

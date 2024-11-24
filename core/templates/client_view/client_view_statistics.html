@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client - Gymbo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-blue-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white text-2xl font-bold">Gymbo</h1>
+            <button class="relative group">
+                <span class="text-white">Logout</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <aside class="w-64 bg-white shadow-md min-h-screen">
+            <div class="p-6">
+                <nav class="space-y-4">
+                    <a href="client_view_daily_routine.html" class="block text-gray-700 font-medium hover:text-blue-500">Tu día</a>
+                    <a href="client_view_weekly_routines.html" class="block text-gray-700 font-medium hover:text-blue-500">Rutina de la semana</a>
+                    <a href="client_view_statistics.html" class="block text-gray-700 font-medium hover:text-blue-500">Estadísticas</a>
+                    <a href="client_view_week_settings.html" class="block text-gray-700 font-medium hover:text-blue-500">Ajustes de rutina</a>
+                    <a href="client_view_account_settings.html" class="block text-gray-700 font-medium hover:text-blue-500">Ajustes de cuenta</a>
+                </nav>
+            </div>
+        </aside>
+
+         <!-- Contenido Principal -->
+        <main class="flex-1 p-6">
+             <h1 class="block text-gray-700 font-medium"> Estadisticas </h1>
+        </main>
+    </div>
+</body>
+
+</html>
