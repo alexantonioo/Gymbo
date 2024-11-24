@@ -33,9 +33,150 @@
         </aside>
 
          <!-- Contenido Principal -->
-        <main class="flex-1 p-6">
-             <h1 class="block text-gray-700 font-medium"> Estadisticas </h1>
+         <main class="flex-1 p-6">
+            <h1 class="block text-gray-700 font-medium mb-4">Estadísticas</h1>
+        
+            <!-- Peso levantado (con caja de búsqueda para buscar ejercicios) -->
+            <div class="mb-6">
+                <label for="exercise-search" class="block text-sm font-medium text-gray-700">Buscar Ejercicio</label>
+                <input type="text" id="exercise-search" name="exercise-search" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Escribe el nombre del ejercicio...">
+            </div>
+            <div class="mb-6">
+                <canvas id="weightLiftedChart" class="w-full h-48"></canvas>
+            </div>
+        
+            <!-- Peso del usuario a través del tiempo (con combo box para filtrar) -->
+            <div class="mb-6">
+                <label for="time-filter" class="block text-sm font-medium text-gray-700">Filtrar por</label>
+                <select id="time-filter" name="time-filter" class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="days">Días</option>
+                    <option value="weeks">Semanas</option>
+                    <option value="months">Meses</option>
+                </select>
+            </div>
+            <div class="mb-6">
+                <canvas id="weightOverTimeChart" class="w-full h-48"></canvas>
+            </div>
+        
+            <!-- Series realizadas -->
+            <div class="mb-6">
+                <canvas id="setsCompletedChart" class="w-full h-48"></canvas>
+            </div>
+        
+            <!-- Calorías quemadas -->
+            <div class="mb-6">
+                <canvas id="caloriesBurnedChart" class="w-full h-48"></canvas>
+            </div>
+        
+            <!-- Calorías consumidas -->
+            <div class="mb-6">
+                <canvas id="caloriesConsumedChart" class="w-full h-48"></canvas>
+            </div>
+        
+           
         </main>
+        
+        <!-- Scripts para gráficos (ejemplo usando Chart.js) -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            // Ejemplo de datos y configuración para gráficos (debes reemplazar con datos reales)
+        
+            // Peso levantado
+            var weightLiftedCtx = document.getElementById('weightLiftedChart').getContext('2d');
+            var weightLiftedChart = new Chart(weightLiftedCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Ejercicio 1', 'Ejercicio 2', 'Ejercicio 3'],
+                    datasets: [{
+                        label: 'Peso Levantado',
+                        data: [50, 70, 100],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false  // Mantener la relación de aspecto
+                }
+            });
+        
+            // Peso del usuario a través del tiempo
+            var weightOverTimeCtx = document.getElementById('weightOverTimeChart').getContext('2d');
+            var weightOverTimeChart = new Chart(weightOverTimeCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+                    datasets: [{
+                        label: 'Peso del Usuario',
+                        data: [70, 72, 68, 65],
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false  // Mantener la relación de aspecto
+                }
+            });
+        
+            // Series realizadas
+            var setsCompletedCtx = document.getElementById('setsCompletedChart').getContext('2d');
+            var setsCompletedChart = new Chart(setsCompletedCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves'],
+                    datasets: [{
+                        label: 'Series Realizadas',
+                        data: [10, 15, 12, 20],
+                        backgroundColor: 'rgba(255, 206, 86, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false  // Mantener la relación de aspecto
+                }
+            });
+        
+            // Calorías quemadas
+            var caloriesBurnedCtx = document.getElementById('caloriesBurnedChart').getContext('2d');
+            var caloriesBurnedChart = new Chart(caloriesBurnedCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+                    datasets: [{
+                        label: 'Calorías Quemadas',
+                        data: [2000, 2200, 2500, 2300],
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false  // Mantener la relación de aspecto
+                }
+            });
+        
+            // Calorías consumidas
+            var caloriesConsumedCtx = document.getElementById('caloriesConsumedChart').getContext('2d');
+            var caloriesConsumedChart = new Chart(caloriesConsumedCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+                    datasets: [{
+                        label: 'Calorías Consumidas',
+                        data: [2500, 2400, 2300, 2200],
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false  // Mantener la relación de aspecto
+                }
+            });
+        </script>
+        
     </div>
 </body>
 

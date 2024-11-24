@@ -3,7 +3,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),  # Reemplaza 'core' con el nombre de tu aplicación
+    path('', include('core.urls')),  # Reemplaza 'mi_aplicacion' con el nombre de tu aplicación
 ]
 
 
