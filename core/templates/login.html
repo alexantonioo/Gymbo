@@ -7,14 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    {% if error %}
-    <p class="text-red-500">{{ error }}</p>
-    {% endif %}
+
+    <p class="text-red-500"></p>
+
     <div class="text-center">
         <img src="https://phantom-marca-mx.unidadeditorial.es/681917df868d0dc7b097c1658a91db3d/resize/828/f/jpg/mx/assets/multimedia/imagenes/2023/05/20/16846178754107.jpg" alt="Gymbo" class="mx-auto mb-4" style="max-width: 300px;">
         <h1 class="text-2xl font-bold mb-6">Gymbo app</h1>
         <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
+
             <div class="mb-4">
                 <input type="text" name="username" placeholder="Nombre de Usuario" class="block w-full px-4 py-2 mb-3 border rounded" required />
                 <input type="password" name="password" placeholder="Clave" class="block w-full px-4 py-2 mb-3 border rounded" required />
