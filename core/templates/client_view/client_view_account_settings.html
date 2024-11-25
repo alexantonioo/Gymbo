@@ -33,9 +33,37 @@
         </aside>
 
          <!-- Contenido Principal -->
-        <main class="flex-1 p-6">
-             <h1 class="block text-gray-700 font-medium"> Ajustes de la cuenta </h1>
+         <main class="flex-1 p-6">
+            <h1 class="block text-gray-700 font-medium mb-4">Ajustes de la cuenta</h1>
+            
+            <form class="space-y-6">
+                <!-- Nombre de usuario -->
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Nombre de usuario</label>
+                    <input type="text" name="username" id="username" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                </div>
+                
+                <!-- Clave -->
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Clave</label>
+                    <input type="password" name="password" id="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                </div>
+                
+                <!-- Foto de perfil -->
+                <div>
+                    <label for="profile_picture" class="block text-sm font-medium text-gray-700">Foto de perfil</label>
+                    <input type="file" name="profile_picture" id="profile_picture" class="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md cursor-pointer bg-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                
+                <!-- Botón Guardar -->
+                <div>
+                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Guardar
+                    </button>
+                </div>
+            </form>
         </main>
+        
     </div>
 </body>
 
