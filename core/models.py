@@ -8,6 +8,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 
+
 class Exercise(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
@@ -17,6 +18,8 @@ class Exercise(models.Model):
     level = models.CharField(max_length=50)
     rating = models.FloatField()
     rating_description = models.CharField(max_length=255)
+    date = models.DateField(default=timezone.now)
+    is_done = models.BooleanField(default=False)
     
 class User(AbstractUser):
     is_client = models.BooleanField(default=False)
@@ -37,6 +40,17 @@ class User(AbstractUser):
     
     class Meta:
         db_table = 'core_user'
+
+class ClientProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    active = models.BooleanField(default=True)
+    name = models.CharField(max_length=64)
+    trainer = models.ForeignKey('TrainerProfile', on_delete=models.SET_NULL, null=True, blank=True)
+    exercises = models.ManyToManyField('Exercise')
+    age = models.IntegerField(null=True, blank=True)
+    weight = models.JSONField(default=list)
+    height = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    reviews = models.JSONField(default=list)
 
 class TrainerProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -95,22 +109,14 @@ class WeeklyPlan(models.Model):
         return False
 
 
-class ClientProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    active = models.BooleanField(default=True)
-    name = models.CharField(max_length=64)
-    trainer = models.ForeignKey(TrainerProfile, on_delete=models.SET_NULL, null=True, blank=True)
-    exercises = models.ManyToManyField('Exercise')
-    age = models.IntegerField(null=True, blank=True)
-    weight = models.JSONField(default=list)
-    height = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    reviews = models.JSONField(default=list)
+class ClientReview(models.Model):
+    client = models.ForeignKey(ClientProfile, on_delete=models.CASCADE)
+    trainer = models.ForeignKey(TrainerProfile, on_delete=models.CASCADE)
+    review_date = models.DateField(auto_now_add=True)
+    notes = models.TextField()
 
-
-
-
-
-
+    def __str__(self):
+        return f"Revisión de {self.client.name} por {self.trainer.name} el {self.review_date}"
 
 
 
